@@ -19,6 +19,8 @@ namespace BD
         {
             config = _Config;
 
+
+
         }
         public SqlConnection DbConnection => new SqlConnection(
             new SqlConnectionStringBuilder(config.GetConnectionString("Conn")).ConnectionString
