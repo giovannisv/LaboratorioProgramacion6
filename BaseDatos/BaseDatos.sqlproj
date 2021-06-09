@@ -62,5 +62,6 @@
   </ItemGroup>
   <ItemGroup>
     <Build Include="dbo\Tablas\MarcaVehiculo.sql" />
+    <Build Include="dbo\Tablas\vehiculo.sql" />
   </ItemGroup>
 </Project>
