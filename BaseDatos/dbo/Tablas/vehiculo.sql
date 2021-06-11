@@ -8,3 +8,8 @@
 	)
 	WITH (DATA_COMPRESSION = PAGE)
 	GO
+
+	CREATE UNIQUE NONCLUSTERED INDEX IDX_Vehiculo_Matricula
+	ON dbo.Vehiculo(Matricula)
+	WITH (DATA_COMPRESSION = PAGE)
+	GO
