@@ -1,6 +1,8 @@
 ﻿CREATE TABLE [dbo].[vehiculo]
 (
 	VehiculoId INT NOT NULL IDENTITY (1,1) CONSTRAINT PK_Vehiculo  PRIMARY KEY CLUSTERED(VehiculoID)
+	, MarcaVehiculoID INT NOT NULL CONSTRAINT FK_Vehiculo_MarcaVehiculo FOREIGN key(MarcaVehiculoID)
+	REFERENCES dbo.MarcaVehiculo(MarcaVehiculoID)
 	, Matricula VARCHAR (250) NOT NULL
 	, Color VARCHAR (250) NOT NULL
 	, FechaModelo DATE NOT NULL CONSTRAINT DF_Vehiculo_FechaModelo default ('2020-01-01')
