@@ -1,6 +1,14 @@
 ﻿CREATE PROCEDURE [dbo].[MarcaVehiculoObtener]
-	@param1 int = 0,
-	@param2 int
+	@MarcaVehiculoID INT=NULL
+	
 AS
-	SELECT @param1, @param2
-RETURN 0
+	BEGIN
+
+	SELECT
+	MarcaVehiculoID
+	,Descripcion
+	,Estado
+
+	FROM MarcaVehiculo
+	END
+
