@@ -10,5 +10,6 @@ AS
 	,Estado
 
 	FROM MarcaVehiculo
+	where (@MarcaVehiculoID IS NULL OR MarcaVehiculoID = @MarcaVehiculoID)
 	END
 
