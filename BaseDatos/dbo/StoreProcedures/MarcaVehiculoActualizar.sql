@@ -11,7 +11,7 @@
 	Descripcion=@Descripcion,
 	Estado=@Estado
 	WHERE
-	MarcaVehiculoID=@	
+	MarcaVehiculoID = @MarcaVehiculoID	
 
 	COMMIT TRANSACTION TRASA
 	SELECT 0 AS CodeError, '' AS MsgError
