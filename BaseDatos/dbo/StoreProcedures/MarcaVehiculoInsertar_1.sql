@@ -1,6 +1,29 @@
 ﻿CREATE PROCEDURE [dbo].[MarcaVehiculoInsertar]
-	@param1 int = 0,
-	@param2 int
-AS
-	SELECT @param1, @param2
-RETURN 0
+	
+	@Descripcion VARCHAR (250)
+	, @Estado BIT
+	AS
+	BEGIN 
+	SET NOCOUNT ON
+	BEGIN Transaction TRASA
+	BEGIN
+	TRY
+	INSERT INTO MarcaVehiculo
+	(
+	Descripcion,Estado
+	)
+	VALUES
+	(
+	@Descripcion,@Estado
+	)
+	COMMIT TRANSACTION TRASA
+	SELECT 0 AS CodeError, '' AS MsgError
+	END TRY
+	BEGIN CATCH
+
+	SELECT
+	ERROR_NUMBER() AS CodeError
+	, ERROR_MESSAGE AS MsgError
+	ROLLBACK TRANSACTION TRASA
+	END CATCH
+	END
