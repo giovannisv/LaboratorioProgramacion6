@@ -1,6 +1,7 @@
 ﻿CREATE PROCEDURE [dbo].[MarcaVehiculoActualizar]
-	@Descripcion VARCHAR (250)
-	, @Estado BIT
+	@Descripcion VARCHAR (250),
+	@MarcaVehiculoID INT,	
+	@Estado BIT
 	AS
 	BEGIN 
 	SET NOCOUNT ON
@@ -11,7 +12,7 @@
 	Descripcion=@Descripcion,
 	Estado=@Estado
 	WHERE
-	MarcaVehiculoID = @MarcaVehiculoID	
+	MarcaVehiculoID = @MarcaVehiculoID
 
 	COMMIT TRANSACTION TRASA
 	SELECT 0 AS CodeError, '' AS MsgError
