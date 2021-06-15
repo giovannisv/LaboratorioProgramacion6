@@ -9,7 +9,7 @@ namespace WBL
 {
     public class MarcaVehiculoServicio
     {
-      public MarcaVehiculoServicio()
+      public MarcaVehiculoServicio(IDataAcces)
         
     }
 }
