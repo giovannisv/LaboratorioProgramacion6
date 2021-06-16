@@ -31,11 +31,11 @@ namespace WBL
             }
 
         }
-        public async Task <MarcaVehiculoEntity> GetByID (MarcaVehiculoEntity)
+        public async Task <MarcaVehiculoEntity> GetByID (MarcaVehiculoEntity entity)
         {
             try
             {
-                var result = sql.QueryFirstAsync<MarcaVehiculoEntity>("MarcaVehiculoObtaner", New
+                var result = sql.QueryFirstAsync<MarcaVehiculoEntity>("MarcaVehiculoObtener", new
                     {
                     entity.MarcaVehiculoID
                     }
