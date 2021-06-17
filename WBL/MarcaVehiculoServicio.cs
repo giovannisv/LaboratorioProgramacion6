@@ -8,7 +8,13 @@ using System.Threading.Tasks;
 
 namespace WBL
 {
-    public class MarcaVehiculoServicio
+    public interface IMarcaVehiculoServicio
+    {
+        Task<IEnumerable<MarcaVehiculoEntity>> Get();
+        Task<MarcaVehiculoEntity> GetByID(MarcaVehiculoEntity entity);
+    }
+
+    public class MarcaVehiculoServicio : IMarcaVehiculoServicio
     {
         private readonly IDataAcces sql;
 
@@ -16,7 +22,7 @@ namespace WBL
         {
             sql = _sql;
         }
-        public async Task<IEnumerable<MarcaVehiculoEntity>>Get()
+        public async Task<IEnumerable<MarcaVehiculoEntity>> Get()
         {
             try
             {
@@ -31,14 +37,14 @@ namespace WBL
             }
 
         }
-        public async Task <MarcaVehiculoEntity> GetByID (MarcaVehiculoEntity entity)
+        public async Task<MarcaVehiculoEntity> GetByID(MarcaVehiculoEntity entity)
         {
             try
             {
                 var result = sql.QueryFirstAsync<MarcaVehiculoEntity>("MarcaVehiculoObtener", new
-                    {
+                {
                     entity.MarcaVehiculoID
-                    }
+                }
                     );
                 return await result;
             }
@@ -48,6 +54,6 @@ namespace WBL
                 throw;
             }
         }
-        
+
     }
 }
