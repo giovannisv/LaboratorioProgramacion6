@@ -12,5 +12,18 @@ namespace WebApp.Pages.MarcaVehiculo
         public void OnGet()
         {
         }
+
+        public void OnPost()
+        {
+        }
+
+        public void OnPut()
+        {
+        }
+
+        public void OnDelete()
+        {
+        }
+
     }
 }
