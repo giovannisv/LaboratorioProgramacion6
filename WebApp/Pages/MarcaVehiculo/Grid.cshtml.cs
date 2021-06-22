@@ -18,8 +18,21 @@ namespace WebApp.Pages.MarcaVehiculo
             this.marcaVehiculoServicio = marcaVehiculoServicio;
         }
 
-        public void OnGet()
+        public IEnumerable<MarcaVehiculoEntity> GridList { get; set; } = new List<MarcaVehiculoEntity>();    
+
+        public async Task<IActionResult> OnGet()
         {
+            try
+            {
+                GridList = await marcaVehiculoServicio.Get();
+                return Page();
+            }
+            catch (Exception ex)
+            {
+
+                return Content ( ex.Message);
+            }
+
         }
 
         public void OnPost()
