@@ -15,7 +15,7 @@ namespace WBL
         Task<DBEntity> Delete(MarcaVehiculoEntity entity);
         Task<IEnumerable<MarcaVehiculoEntity>> Get();
         Task<MarcaVehiculoEntity> GetByID(MarcaVehiculoEntity entity);
-        Task<DBEntity>Update(MarcaVehiculoEntity entity)
+        Task<DBEntity> Update(MarcaVehiculoEntity entity);
     }
 
     public class MarcaVehiculoServicio : IMarcaVehiculoServicio
