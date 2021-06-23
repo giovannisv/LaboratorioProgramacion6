@@ -1,1 +1,4 @@
-﻿
+﻿namespace MarcaVehiculoGrid {
+
+    $("#GridView").DataTable();
+}
