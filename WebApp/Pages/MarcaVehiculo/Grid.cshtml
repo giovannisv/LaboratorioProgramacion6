@@ -23,6 +23,25 @@
 
                     </thead>
                         <tbody>
+                            @foreach (var item in Model.GridList)
+                            {
+                                <tr>
+                                    <td>@item.MarcaVehiculoID</td>
+                                    <td>@item.Descripcion</td>
+                                    <td>@(item.Estado ? "Activo":"Inactivo")</td>
+                                    <td>
+                                        <button type="button" class="btn btn-outline-primary">
+                                        <i class='bx bxs-edit'></i></button>
+                                        <button type="button" class="btn btn-outline-primary">
+                                        <i class='bx bx-trash'></i></button>
+
+                                    </td>
+
+                                </tr>
+
+                            }
+
+
 
                         </tbody>
                 </table>
