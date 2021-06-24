@@ -34,6 +34,34 @@ namespace WebApp.Pages.MarcaVehiculo
             }
 
         }
+        public async Task<IActionResult> OnGetEliminar(int id)
+        {
+            try
+            {
+                var result = await marcaVehiculoServicio.Delete(new()
+                {
+                    MarcaVehiculoID=id
+                });
+
+                if(result.CodeError!=0)
+                {
+                    throw new Exception(message: result.MsgError);
+                }
+                TempData["Msg"] = "se elimino correctamente";
+                return Redirect("Grid");
+            }
+            catch (Exception ex)
+            {
+
+                return Content(ex.Message);
+            }
+
+        }
+
+
+
+
+
 
         public void OnPost()
         {
