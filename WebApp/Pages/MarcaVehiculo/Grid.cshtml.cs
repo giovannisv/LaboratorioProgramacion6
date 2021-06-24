@@ -20,11 +20,18 @@ namespace WebApp.Pages.MarcaVehiculo
 
         public IEnumerable<MarcaVehiculoEntity> GridList { get; set; } = new List<MarcaVehiculoEntity>();    
 
+        public string Mensaje { get; set; }
         public async Task<IActionResult> OnGet()
         {
             try
             {
                 GridList = await marcaVehiculoServicio.Get();
+
+                if(TempData.ContainsKey("Msg"))
+                {
+                    Mensaje = TempData["Msg"] as string;
+                }
+                TempData.Clear();
                 return Page();
             }
             catch (Exception ex)
