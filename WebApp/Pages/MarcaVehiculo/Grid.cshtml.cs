@@ -18,9 +18,9 @@ namespace WebApp.Pages.MarcaVehiculo
             this.marcaVehiculoServicio = marcaVehiculoServicio;
         }
 
-        public IEnumerable<MarcaVehiculoEntity> GridList { get; set; } = new List<MarcaVehiculoEntity>();    
+        public IEnumerable<MarcaVehiculoEntity> GridList { get; set; } = new List<MarcaVehiculoEntity>();
 
-        public string Mensaje { get; set; }
+        public string Mensaje { get; set; } = "";
         public async Task<IActionResult> OnGet()
         {
             try
