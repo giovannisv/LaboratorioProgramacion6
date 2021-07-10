@@ -1,7 +1,8 @@
 ﻿namespace MarcaVehiculoEdit {
     var Formulario = new Vue(
         {
-            data: {
+            data:
+            {
                 Formulario: ""
             },
             mounted()
