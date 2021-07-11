@@ -10,7 +10,29 @@
             @(Model.id.HasValue ? "Actualizar" : "Nuevo")
         </div>
         <div class="card-body">
-            
+            <form id="FormEdit" method="post">
+                <input type="hidden" asp-for="Entity.MarcaVehiculoID" />
+                <div class="form-group mb-3">
+                    <label for="Entity.Descripcion" class="form-label">Descripcion</label>
+                    <input type="text" class="form-control" asp-for="Entity.Descripcion" maxlength="250" required>
+                </div>
+                <div class="form-group form-check form-switch">
+                    <label for="Entity.Estado" class="form-check-label"></label>
+                    <input type="checkbox" class="form-check-input" asp-for="Entity.Estado" value="true">
+                </div>
+                <div class="row">
+                    <div class="col-4">
+                        <button type="submit" class="btn btn-online-primary">
+                            @(Model.id.HasValue ? "Actualizar":"Agregar")
+                        </button>
+
+                    </div>
+
+
+                </div>
+
+
+            </form>
         </div>
     </div>
 
