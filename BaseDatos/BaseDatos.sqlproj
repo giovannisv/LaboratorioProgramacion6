@@ -71,4 +71,8 @@
     <Build Include="dbo\StoreProcedures\MarcaVehiculoLista.sql" />
     <Build Include="dbo\Tablas\marcavehiculo.sql" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="BaseDatos.publish.xml" />
+    <None Include="BaseDatos_1.publish.xml" />
+  </ItemGroup>
 </Project>
