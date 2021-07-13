@@ -5,6 +5,7 @@
 	REFERENCES dbo.MarcaVehiculo(MarcaVehiculoID)
 	, Matricula VARCHAR (250) NOT NULL
 	, Color VARCHAR (250) NOT NULL
+	,Modelo VARCHAR (250) NOT NULL
 	, FechaModelo DATE NOT NULL CONSTRAINT DF_Vehiculo_FechaModelo default ('2020-01-01')
 	,TieneDefectos BIT NOT NULL CONSTRAINT DF_Vehiculo_TieneDefectos default(0)
 	,Defectos VARCHAR (1000) NULL
