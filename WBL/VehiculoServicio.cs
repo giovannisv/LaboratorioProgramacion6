@@ -8,7 +8,16 @@ using System.Threading.Tasks;
 
 namespace WBL
 {
-    public class VehiculoServicio
+    public interface IVehiculoServicio
+    {
+        Task<DBEntity> Create(VehiculoEntity entity);
+        Task<DBEntity> Delete(VehiculoEntity entity);
+        Task<IEnumerable<VehiculoEntity>> Get();
+        Task<VehiculoEntity> GetByID(VehiculoEntity entity);
+        Task<DBEntity> Update(VehiculoEntity entity);
+    }
+
+    public class VehiculoServicio : IVehiculoServicio
     {
 
         private readonly IDataAcces sql;
@@ -21,7 +30,7 @@ namespace WBL
         {
             try
             {
-                var result = sql.QueryAsync<VehiculoEntity,MarcaVehiculoEntity>("VehiculoObtener","VehiculoId,MarcaVehiculoID");
+                var result = sql.QueryAsync<VehiculoEntity, MarcaVehiculoEntity>("VehiculoObtener", "VehiculoId,MarcaVehiculoID");
                 return await result;
 
             }
@@ -62,11 +71,11 @@ namespace WBL
                     entity.FechaModelo,
                     entity.TieneDefectos,
                     entity.Defectos,
-                    entity.Estado          
+                    entity.Estado
 
-                    
+
                 }
-                    );;
+                    ); ;
                 return await result;
             }
             catch (Exception)
