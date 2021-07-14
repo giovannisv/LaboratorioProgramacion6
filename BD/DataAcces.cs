@@ -25,7 +25,7 @@ namespace BD
         public SqlConnection DbConnection => new SqlConnection(
             new SqlConnectionStringBuilder(config.GetConnectionString("Conn")).ConnectionString
             );
-        public async Task<IEnumerable<T>> QueryAsync<T>(String sp, object Param = null, int? Timeout = null)
+        public async Task<IEnumerable<T>> QueryAsync<T>(string sp, object Param = null, int? Timeout = null)
         {
             try
             {
@@ -46,7 +46,7 @@ namespace BD
                 throw;
             }
         }
-        public async Task<IEnumerable<dynamic>> QueryAsync(String sp, object Param = null, int? Timeout = null)
+        public async Task<IEnumerable<dynamic>> QueryAsync(string sp, object Param = null, int? Timeout = null)
         {
             try
             {
@@ -68,7 +68,7 @@ namespace BD
             }
         }
 
-        public async Task<IEnumerable<T>> QueryAsync<T, B>(String sp, object Param = null, int? Timeout = null)
+        public async Task<IEnumerable<T>> QueryAsync<T, B>(string sp, string split, object Param = null, int? Timeout = null)
         {
             try
             {
@@ -76,7 +76,7 @@ namespace BD
                 {
                     await exec.OpenAsync();
                     var result = exec.QueryAsync<T, B>(sql: sp, param: Param, commandType: System.Data.CommandType.StoredProcedure
-                        , commandTimeout: Timeout);
+                        , commandTimeout: Timeout, split);
 
                     return await result;
 
@@ -89,7 +89,7 @@ namespace BD
                 throw;
             }
         }
-        public async Task<IEnumerable<T>> QueryAsync<T, B, C>(String sp, object Param = null, int? Timeout = null)
+        public async Task<IEnumerable<T>> QueryAsync<T, B, C>(string sp, string split, object Param = null, int? Timeout = null)
         {
             try
             {
@@ -97,7 +97,7 @@ namespace BD
                 {
                     await exec.OpenAsync();
                     var result = exec.QueryAsync<T, B, C>(sql: sp, param: Param, commandType: System.Data.CommandType.StoredProcedure
-                        , commandTimeout: Timeout);
+                        , commandTimeout: Timeout,splitOn:split);
 
                     return await result;
 
@@ -110,7 +110,7 @@ namespace BD
                 throw;
             }
         }
-        public async Task<IEnumerable<T>> QueryAsync<T, B, C, D>(String sp, object Param = null, int? Timeout = null)
+        public async Task<IEnumerable<T>> QueryAsync<T, B, C, D>(string sp, string split, object Param = null, int? Timeout = null)
         {
             try
             {
@@ -118,7 +118,7 @@ namespace BD
                 {
                     await exec.OpenAsync();
                     var result = exec.QueryAsync<T, B, C, D>(sql: sp, param: Param, commandType: System.Data.CommandType.StoredProcedure
-                        , commandTimeout: Timeout);
+                        , commandTimeout: Timeout, splitOn:split);
 
                     return await result;
 
@@ -131,7 +131,7 @@ namespace BD
                 throw;
             }
         }
-        public async Task<IEnumerable<T>> QueryAsync<T, B, C, D, E>(String sp, object Param = null, int? Timeout = null)
+        public async Task<IEnumerable<T>> QueryAsync<T, B, C, D, E>(string sp, string split, object Param = null, int? Timeout = null)
         {
             try
             {
@@ -139,8 +139,8 @@ namespace BD
                 {
                     await exec.OpenAsync();
                     var result = exec.QueryAsync<T, B, C, D, E>(sql: sp, param: Param, commandType: System.Data.CommandType.StoredProcedure
-                        , commandTimeout: Timeout);
-
+                        , commandTimeout: Timeout, splitOn:split);
+                    
                     return await result;
 
                 }
@@ -152,7 +152,7 @@ namespace BD
                 throw;
             }
         }
-        public async Task<IEnumerable<T>> QueryAsync<T, B, C, D, E, F>(String sp, object Param = null, int? Timeout = null)
+        public async Task<IEnumerable<T>> QueryAsync<T, B, C, D, E, F>(string sp, string split, object Param = null, int? Timeout = null)
         {
             try
             {
@@ -160,7 +160,7 @@ namespace BD
                 {
                     await exec.OpenAsync();
                     var result = exec.QueryAsync<T, B, C, D, E, F>(sql: sp, param: Param, commandType: System.Data.CommandType.StoredProcedure
-                        , commandTimeout: Timeout);
+                        , commandTimeout: Timeout, splitOn:split);
 
                     return await result;
 
@@ -173,7 +173,7 @@ namespace BD
                 throw;
             }
         }
-        public async Task<IEnumerable<T>> QueryAsync<T, B, C, D, E, F, G>(String sp, object Param = null, int? Timeout = null)
+        public async Task<IEnumerable<T>> QueryAsync<T, B, C, D, E, F, G>(string sp, string split, object Param = null, int? Timeout = null)
         {
             try
             {
@@ -181,7 +181,7 @@ namespace BD
                 {
                     await exec.OpenAsync();
                     var result = exec.QueryAsync<T, B, C, D, E, F, G>(sql: sp, param: Param, commandType: System.Data.CommandType.StoredProcedure
-                        , commandTimeout: Timeout);
+                        , commandTimeout: Timeout,splitOn:split);
 
                     return await result;
 
@@ -195,7 +195,7 @@ namespace BD
             }
         }
 
-        public async Task<T> QueryFirstAsync<T>(String sp, object Param = null, int? Timeout = null)
+        public async Task<T> QueryFirstAsync<T>(string sp, object Param = null, int? Timeout = null)
         {
 
             try
@@ -216,7 +216,7 @@ namespace BD
                 throw;
             }
         }
-        public async Task<DBEntity> ExecuteAsync(String sp, object Param = null, int? Timeout = null)
+        public async Task<DBEntity> ExecuteAsync(string sp, object Param = null, int? Timeout = null)
         {
 
             try
