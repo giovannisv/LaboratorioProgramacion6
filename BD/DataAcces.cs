@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace BD
 {
-    public class DataAcces : IDataAcces
+    public class DataAcces
     {
         private readonly IConfiguration config;
 
@@ -160,7 +160,7 @@ namespace BD
                 {
                     await exec.OpenAsync();
                     var result = exec.QueryAsync<T, B, C, D, E, F>(sql: sp, param: Param, commandType: System.Data.CommandType.StoredProcedure
-                        , commandTimeout: Timeout, splitOn:split);
+                        , commandTimeout: Timeout, splitOn:split );
 
                     return await result;
 
