@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace BD
 {
-    public class DataAcces
+    public class DataAcces : IDataAcces
     {
         private readonly IConfiguration config;
 
@@ -97,7 +97,7 @@ namespace BD
                 {
                     await exec.OpenAsync();
                     var result = exec.QueryAsync<T, B, C>(sql: sp, param: Param, commandType: System.Data.CommandType.StoredProcedure
-                        , commandTimeout: Timeout,splitOn:split);
+                        , commandTimeout: Timeout, splitOn: split);
 
                     return await result;
 
@@ -118,7 +118,7 @@ namespace BD
                 {
                     await exec.OpenAsync();
                     var result = exec.QueryAsync<T, B, C, D>(sql: sp, param: Param, commandType: System.Data.CommandType.StoredProcedure
-                        , commandTimeout: Timeout, splitOn:split);
+                        , commandTimeout: Timeout, splitOn: split);
 
                     return await result;
 
@@ -139,8 +139,8 @@ namespace BD
                 {
                     await exec.OpenAsync();
                     var result = exec.QueryAsync<T, B, C, D, E>(sql: sp, param: Param, commandType: System.Data.CommandType.StoredProcedure
-                        , commandTimeout: Timeout, splitOn:split);
-                    
+                        , commandTimeout: Timeout, splitOn: split);
+
                     return await result;
 
                 }
@@ -160,7 +160,7 @@ namespace BD
                 {
                     await exec.OpenAsync();
                     var result = exec.QueryAsync<T, B, C, D, E, F>(sql: sp, param: Param, commandType: System.Data.CommandType.StoredProcedure
-                        , commandTimeout: Timeout, splitOn:split );
+                        , commandTimeout: Timeout, splitOn: split);
 
                     return await result;
 
@@ -181,7 +181,7 @@ namespace BD
                 {
                     await exec.OpenAsync();
                     var result = exec.QueryAsync<T, B, C, D, E, F, G>(sql: sp, param: Param, commandType: System.Data.CommandType.StoredProcedure
-                        , commandTimeout: Timeout,splitOn:split);
+                        , commandTimeout: Timeout, splitOn: split);
 
                     return await result;
 
