@@ -48,7 +48,8 @@
                                         <i class='bx bxs-edit'></i>
                                     </a>
 
-                                    <button type="button" class="btn btn-outline-primary" onclick="MarcaVehiculoGrid.OnClickEliminar(@item.VehiculoId)">
+                                    <button type="button" class="btn btn-outline-primary" 
+                                         onclick="VehiculoGrid.OnClickEliminar(@item.VehiculoId)">
                                         <i class='bx bx-trash'></i>
                                     </button>
 
@@ -68,3 +69,12 @@
     </div>
 
 </div>
+@section Scripts{ 
+<script>
+    var MensajeApp = "@Html.Raw(Model.Mensaje)";
+</script>
+
+<script defer src="~/App/Vehiculo/Grid.js"></script>
+
+
+}
