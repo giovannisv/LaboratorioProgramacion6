@@ -11,7 +11,8 @@ namespace WebApp.Pages.MarcaVehiculo
 {
     public class GridModel : PageModel
     {
-        private readonly IMarcaVehiculoServicio marcaVehiculoServicio;
+       
+ private readonly IMarcaVehiculoServicio marcaVehiculoServicio;
 
         public GridModel(IMarcaVehiculoServicio marcaVehiculoServicio )
         {
@@ -65,22 +66,6 @@ namespace WebApp.Pages.MarcaVehiculo
 
         }
 
-
-
-
-
-
-        public void OnPost()
-        {
-        }
-
-        public void OnPut()
-        {
-        }
-
-        public void OnDelete()
-        {
-        }
 
     }
 }
