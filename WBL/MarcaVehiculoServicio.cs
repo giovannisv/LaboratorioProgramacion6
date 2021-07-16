@@ -14,6 +14,7 @@ namespace WBL
         Task<DBEntity> Create(MarcaVehiculoEntity entity);
         Task<DBEntity> Delete(MarcaVehiculoEntity entity);
         Task<IEnumerable<MarcaVehiculoEntity>> Get();
+        Task<IEnumerable<MarcaVehiculoEntity>> GetLista();
         Task<MarcaVehiculoEntity> GetByID(MarcaVehiculoEntity entity);
         Task<DBEntity> Update(MarcaVehiculoEntity entity);
     }
@@ -112,6 +113,22 @@ namespace WBL
 
                 throw;
             }
+        }
+
+        public async Task<IEnumerable<MarcaVehiculoEntity>> GetLista()
+        {
+            try
+            {
+                var result = sql.QueryAsync<MarcaVehiculoEntity>("MarcaVehiculoLista");
+                return await result;
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+
         }
 
     }
