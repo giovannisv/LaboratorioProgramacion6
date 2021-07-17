@@ -76,7 +76,7 @@ namespace BD
                 {
                     await exec.OpenAsync();
                     var result = exec.QueryAsync<T, B>(sql: sp, param: Param, commandType: System.Data.CommandType.StoredProcedure
-                        , commandTimeout: Timeout, split);
+                      , commandTimeout: Timeout, splitOn: split);
 
                     return await result;
 

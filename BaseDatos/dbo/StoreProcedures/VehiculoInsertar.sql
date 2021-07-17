@@ -16,7 +16,7 @@ SET NOCOUNT ON
 	BEGIN TRY
 	-- AQUI VA EL CODIGO
 		
-		INSERT INTO dbo.Vehiculo 
+		INSERT INTO dbo.vehiculo 
 		(
 	     MarcaVehiculoId
 	    , Matricula 

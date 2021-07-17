@@ -5,7 +5,7 @@ AS
 	SET NOCOUNT ON
 	BEGIN Transaction TRASA
 	BEGIN TRY
-	DELETE FROM MarcaVehiculo
+	DELETE FROM marcavehiculo
 	WHERE MarcaVehiculoID = MarcaVehiculoID
 	
 	COMMIT TRANSACTION TRASA

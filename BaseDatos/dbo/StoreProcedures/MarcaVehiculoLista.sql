@@ -11,7 +11,7 @@ AS
 		Descripcion
 
 		FROM	
-			dbo.MarcaVehiculo
+			dbo.marcavehiculo
 
 			WHERE
 					Estado=1

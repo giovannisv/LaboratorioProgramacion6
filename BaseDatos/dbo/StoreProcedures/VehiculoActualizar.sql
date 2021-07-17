@@ -16,7 +16,7 @@ SET NOCOUNT ON
 	BEGIN TRY
 	-- AQUI VA EL CODIGO
 		
-	UPDATE dbo.Vehiculo SET
+	UPDATE dbo.vehiculo SET
 	 MarcaVehiculoId=@MarcaVehiculoId,
 	 Matricula=@Matricula,
 	 Color=@Color,

@@ -9,7 +9,7 @@ AS
 	,Descripcion
 	,Estado
 
-	FROM MarcaVehiculo
+	FROM marcavehiculo
 	where (@MarcaVehiculoID IS NULL OR MarcaVehiculoID = @MarcaVehiculoID)
 	END
 

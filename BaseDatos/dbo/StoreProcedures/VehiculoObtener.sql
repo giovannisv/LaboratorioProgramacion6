@@ -18,7 +18,7 @@ AS BEGIN
 	
 				
 
-	FROM dbo.Vehiculo V
+	FROM dbo.vehiculo V
 	 INNER JOIN dbo.MarcaVehiculo MV
          ON V.MarcaVehiculoId = MV.MarcaVehiculoId
 	WHERE

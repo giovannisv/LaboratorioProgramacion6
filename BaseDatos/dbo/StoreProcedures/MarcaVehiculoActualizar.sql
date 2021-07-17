@@ -7,7 +7,7 @@
 	SET NOCOUNT ON
 	BEGIN Transaction TRASA
 	BEGIN 	TRY --Metodos
-	UPDATE MarcaVehiculo
+	UPDATE marcavehiculo
 	SET 
 	Descripcion=@Descripcion,
 	Estado=@Estado
