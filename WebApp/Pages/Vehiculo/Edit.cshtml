@@ -12,7 +12,7 @@
             <form id="FormEdit" method="post">
                 <input type="hidden" asp-for="Entity.VehiculoId" />
                 <div class="form-group mb-3">
-                    <label for="Entity.VehiculoId" class="form-label">Marca Vehiculo</label>
+                    <label for="Entity.MarcaVehiculoID" class="form-label">Marca Vehiculo</label>
 
                     <select asp-for="Entity.VehiculoId" class="form-select"
                             asp-items="@(new SelectList(Model.MarcaVehiculoLista,"MarcaVehiculoId","Descripcion"))" required>
@@ -48,7 +48,7 @@
                 <div class="form-group form-check form-switch">
 
                     <input type="checkbox" class="form-check-input" asp-for="Entity.Estado" value="true">
-                    <label for="Entity.Estado" class="form-check-label"></label>
+                    <label for="Entity.Estado" class="form-check-label">Estado</label>
                 </div>
                 <div class="row">
                     <div class="col-4">
