@@ -12,9 +12,9 @@
             <form id="FormEdit" method="post">
                 <input type="hidden" asp-for="Entity.VehiculoId" />
                 <div class="form-group mb-3">
-                    <label for="Entity.MarcaVehiculoId" class="form-label">Marca Vehiculo</label>
+                    <label for="Entity.VehiculoId" class="form-label">Marca Vehiculo</label>
 
-                    <select asp-for="Entity.MarcaVehiculoID" class="form-select"
+                    <select asp-for="Entity.VehiculoId" class="form-select"
                             asp-items="@(new SelectList(Model.MarcaVehiculoLista,"MarcaVehiculoId","Descripcion"))" required>
                     </select>
                     <div class="form-group mb-3">
@@ -31,7 +31,7 @@
                     </div>
                     <div class="form-group mb-3">
                         <label for="Entity.FechaModelo" class="form-label">Fecha Modelo</label>
-                        <input type="text" class="form-control" asp-for="Entity.FechaModelo" maxlength="250" required>
+                        <input type="date" class="form-control" asp-for="Entity.FechaModelo" maxlength="250" required>
                     </div>
                     <div class="form-group form-check form-switch">
                         <label class="form-check-label" for="Entity_TieneDefectos">Defectos?</label>
@@ -39,15 +39,16 @@
                                v-on:change="RefrescarValidaciones" value="true">
                     </div>
                     <div v-show="Entity.TieneDefectos" class="form-group mb-3">
-                        <label for="Entity.FechaModelo" class="form-label">Comentarios</label>
+                        <label for="Entity.Defectos" class="form-label">Comentarios</label>
                         <textarea  class="form-control" rows="2" asp-for="Entity.Defectos" maxlength="1000" required></textarea>
                     </div>
 
 
                 </div>
                 <div class="form-group form-check form-switch">
-                    <label for="Entity.Estado" class="form-check-label"></label>
+
                     <input type="checkbox" class="form-check-input" asp-for="Entity.Estado" value="true">
+                    <label for="Entity.Estado" class="form-check-label"></label>
                 </div>
                 <div class="row">
                     <div class="col-4">
