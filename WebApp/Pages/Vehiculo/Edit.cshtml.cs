@@ -6,7 +6,6 @@ using Entity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using WBL;
-
 namespace WebApp.Pages.Vehiculo
 {
     public class EditModel : PageModel
