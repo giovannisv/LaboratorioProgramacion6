@@ -15,7 +15,7 @@
                     <label for="Entity.MarcaVehiculoID" class="form-label">Marca Vehiculo</label>
 
                     <select asp-for="Entity.VehiculoId" class="form-select"
-                            asp-items="@(new SelectList(Model.MarcaVehiculoLista,"MarcaVehiculoId","Descripcion"))" required>
+                            asp-items="@(new SelectList(Model.MarcaVehiculoLista,"MarcaVehiculoID","Descripcion"))" required>
                     </select>
                     <div class="form-group mb-3">
                         <label for="Entity.Matricula" class="form-label">Matricula</label>
