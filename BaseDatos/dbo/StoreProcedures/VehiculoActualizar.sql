@@ -1,6 +1,6 @@
 ﻿CREATE PROCEDURE dbo.VehiculoActualizar
 	@VehiculoId INT,
-	@MarcaVehiculoId INT,
+	@MarcaVehiculoID INT,
     @Matricula VARCHAR(250),
 	@Color VARCHAR(250),
 	@Modelo VARCHAR(250),
@@ -17,7 +17,7 @@ SET NOCOUNT ON
 	-- AQUI VA EL CODIGO
 		
 	UPDATE dbo.vehiculo SET
-	 MarcaVehiculoId=@MarcaVehiculoId,
+	 MarcaVehiculoID=@MarcaVehiculoId,
 	 Matricula=@Matricula,
 	 Color=@Color,
 	 Modelo=@Modelo,
