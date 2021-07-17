@@ -38,9 +38,9 @@
                         <input type="checkbox" class="form-check-input" asp-for="Entity.TieneDefectos" v-model="Entity.TieneDefectos"
                                v-on:change="RefrescarValidaciones" value="true">
                     </div>
-                    <div v-show="Entity.TieneDefectos" class="form-group mb-3">
+                    <div v-if="Entity.TieneDefectos" class="form-group mb-3">
                         <label for="Entity.Defectos" class="form-label">Comentarios</label>
-                        <textarea  class="form-control" rows="2" asp-for="Entity.Defectos" maxlength="1000" required></textarea>
+                        <textarea class="form-control" rows="2" asp-for="Entity.Defectos" maxlength="1000" required></textarea>
                     </div>
 
 
@@ -61,3 +61,7 @@
         </div>
     </div>
 </div>
+@section Script
+{
+    <script defer src="~/App/Vehiculo/Edit.js"></script>
+}
