@@ -1,6 +1,6 @@
 ﻿namespace VehiculoEdit {
 
-    var Entity = $("AppEdit").data("entity");
+    var Entity = $("#AppEdit").data("entity");
     var Formulario = new Vue(
         {
             data:
