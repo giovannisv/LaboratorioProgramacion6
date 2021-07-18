@@ -120,6 +120,7 @@ namespace WBL
             try
             {
                 var result = sql.QueryAsync<MarcaVehiculoEntity>("MarcaVehiculoLista");
+
                 return await result;
 
             }
