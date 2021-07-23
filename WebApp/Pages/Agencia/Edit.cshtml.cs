@@ -2,27 +2,35 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Entity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using WBL;
 
 namespace WebApp.Pages.Agencia
 {
     public class EditModel : PageModel
     {
-        private readonly AgenciaServicio agenciaservicio;
+        private readonly IAgenciaServicio agenciaServicio;
+        private readonly ICatalogoProvinciaServicio catalogoProvinciaServicio;
+        private readonly ICatalogoCantonServicio catalogoCantonServicio;
+        private readonly ICatalogoDistritoServicio catalogoDistritoServicio;
 
-        private readonly CaServicio AgenciaServicio;
-
-
-        public EditModel(IAgenciaServicio AgenciaServicio, IAgenciaServicio agendaServicio)
+        public EditModel(IAgenciaServicio agenciaServicio, ICatalogoProvinciaServicio catalogoProvinciaServicio,
+            ICatalogoCantonServicio catalogoCantonServicio,
+            ICatalogoDistritoServicio catalogoDistritoServicio)
         {
-            thisServicio = AgenciaServicio;
-            this.marcaVehiculoServicio = marcaVehiculoServicio;
+            this.agenciaServicio = agenciaServicio;
+            this.catalogoProvinciaServicio = catalogoProvinciaServicio;
+            this.catalogoCantonServicio = catalogoCantonServicio;
+            this.catalogoDistritoServicio = catalogoDistritoServicio;
         }
         [BindProperty]
-        public VehiculoEntity Entity { get; set; } = new VehiculoEntity();
+        [FromBody]
+        public AgenciasEntity Entity { get; set; } = new AgenciasEntity();
 
-        public IEnumerable<MarcaVehiculoEntity> MarcaVehiculoLista { get; set; } = new List<MarcaVehiculoEntity>();
+        public IEnumerable<CatalogoProvinciaEntity> ProvinciaLista { get; set; } = new List<CatalogoProvinciaEntity>();
+
         [BindProperty(SupportsGet = true)]
         public int? id { get; set; }
 
@@ -32,9 +40,9 @@ namespace WebApp.Pages.Agencia
             {
                 if (id.HasValue)
                 {
-                    Entity = await vehiculoServicio.GetByID(new() { VehiculoId = id });
+                    Entity = await agenciaServicio.GetByID(new() { AgenciaId = id });
                 }
-                MarcaVehiculoLista = await marcaVehiculoServicio.GetLista();
+                ProvinciaLista = await catalogoProvinciaServicio.GetLista();
                 return Page();
             }
             catch (Exception ex)
@@ -44,33 +52,79 @@ namespace WebApp.Pages.Agencia
             }
         }
 
-        public async Task<IActionResult> OnPostAsync()
+        public async Task<IActionResult> OnPost()
         {
             try
             {
-                if (Entity.VehiculoId.HasValue)
+                var result = new DBEntity();
+                if (Entity.AgenciaId.HasValue)
                 {
                     //actualizar
-                    var result = await vehiculoServicio.Update(Entity);
-                    if (result.CodeError != 0) throw new Exception(message: result.MsgError);
-                    TempData["Msg"] = "Se actualizo correctamente";
+                    result = await agenciaServicio.Update(Entity);
+
                 }
 
                 else
                 {
 
                     //nuevo
-                    var result = await vehiculoServicio.Create(Entity);
-                    if (result.CodeError != 0) throw new Exception(message: result.MsgError);
-                    TempData["Msg"] = "Se agrego correctamente";
+                    result = await agenciaServicio.Create(Entity);
+
 
                 }
-                return RedirectToPage("Grid");
+                return new JsonResult(result);
             }
             catch (Exception ex)
             {
 
-                return Content(content: ex.Message);
+                return new JsonResult(new DBEntity { CodeError = ex.HResult, MsgError = ex.Message });
+            }
+        }
+        public async Task<IActionResult> OnPostChangeProvincia()
+        {
+            try
+            {
+                var result = await catalogoCantonServicio.GetLista(
+                    new CatalogoProvinciaEntity { IdCatalogoProvincia = Entity.IdCatalogoProvincia }
+                    );
+                return new JsonResult(result);
+            }
+            catch (Exception ex)
+            {
+
+                return new JsonResult(new DBEntity { CodeError = ex.HResult, MsgError = ex.Message });
+            }
+
+        }
+        public async Task<IActionResult> OnPostChangeCanton()
+        {
+            try
+            {
+                var result = await catalogoDistritoServicio.GetLista(
+                    new CatalogoCantonEntity { IdCatalogoCanton = Entity.IdCatalogoCanton }
+                    );
+                return new JsonResult(result);
+            }
+            catch (Exception ex)
+            {
+
+                return new JsonResult(new DBEntity { CodeError = ex.HResult, MsgError = ex.Message });
+            }
+        }
+
+        public async Task<IActionResult> OnPostChangeDistrito()
+        {
+            try
+            {
+                var result = await catalogoDistritoServicio.GetLista(
+                    new CatalogoCantonEntity { IdCatalogoCanton = Entity.IdCatalogoCanton }
+                    );
+                return new JsonResult(result);
+            }
+            catch (Exception ex)
+            {
+
+                return new JsonResult(new DBEntity { CodeError = ex.HResult, MsgError = ex.Message });
             }
         }
     }
