@@ -26,8 +26,5 @@ namespace Entity
         public bool TieneDefectos { get; set; }
         public string Defectos { get; set; }
         
-
-
-
     }
 }

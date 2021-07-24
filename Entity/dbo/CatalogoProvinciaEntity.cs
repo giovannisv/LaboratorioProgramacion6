@@ -8,7 +8,7 @@ namespace Entity
 {
     public class CatalogoProvinciaEntity
     {
-        public int? IdCatalogoProvincia { get; set }
-        public string NombreCatalogoProvincia { get; set }
+        public int? IdCatalogoProvincia { get; set; }
+        public string NombreCatalogoProvincia { get; set; }
     }
 }
