@@ -85,5 +85,6 @@
   <ItemGroup>
     <None Include="BaseDatos.publish.xml" />
     <None Include="BaseDatos_1.publish.xml" />
+    <None Include="BaseDatos_2.publish.xml" />
   </ItemGroup>
 </Project>
