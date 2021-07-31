@@ -47,7 +47,7 @@ namespace WBL
             {
                 var result = sql.QueryFirstAsync<VehiculoEntity>("VehiculoObtener", new
                 {
-                    entity.MarcaVehiculoID
+                    entity.VehiculoId
                 }
                     );
                 return await result;
@@ -75,7 +75,7 @@ namespace WBL
 
 
                 }
-                    ); ;
+                    ); 
                 return await result;
             }
             catch (Exception)
@@ -98,7 +98,11 @@ namespace WBL
                     entity.FechaModelo,
                     entity.TieneDefectos,
                     entity.Defectos,
-                    entity.Estado
+                    entity.Estado,
+                 
+                    
+                    Defectos = entity.TieneDefectos ? entity.Defectos : null
+
                 }
                     );
                 return await result;

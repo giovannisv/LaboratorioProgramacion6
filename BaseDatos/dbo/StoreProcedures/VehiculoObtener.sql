@@ -5,22 +5,22 @@ AS BEGIN
 	SET NOCOUNT ON
 
 	SELECT
-			V.VehiculoId
-		,   V.Matricula
-		,   V.Color
-		,   V.Modelo
-		,   V.Estado
-		,   V.FechaModelo
-		,	V.TieneDefectos
-		,   V.Defectos
-		,   MV.MarcaVehiculoID
-		,	MV.Descripcion
+			VehiculoId
+		,   Matricula
+		,   Color
+		,   Modelo		
+		,   FechaModelo
+		,	TieneDefectos
+		,   Defectos
+		,   Estado
+		,   MarcaVehiculoID
+		,	Descripcion
 	
 				
 
-	FROM dbo.vehiculo V
-	 INNER JOIN dbo.MarcaVehiculo MV
-         ON V.MarcaVehiculoID = MV.MarcaVehiculoId
+	FROM vehiculo 
+	 INNER JOIN MarcaVehiculo 
+         ON MarcaVehiculoID = MarcaVehiculoId
 	WHERE
 	     (@VehiculoId IS NULL OR VehiculoId=@VehiculoId)
 

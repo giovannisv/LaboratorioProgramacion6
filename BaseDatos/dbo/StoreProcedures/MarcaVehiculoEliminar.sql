@@ -6,7 +6,7 @@ AS
 	BEGIN Transaction TRASA
 	BEGIN TRY
 	DELETE FROM marcavehiculo
-	WHERE MarcaVehiculoID = MarcaVehiculoID
+	WHERE MarcaVehiculoID = @MarcaVehiculoID
 	
 	COMMIT TRANSACTION TRASA
 	SELECT 0 AS CodeError, '' AS MsgError

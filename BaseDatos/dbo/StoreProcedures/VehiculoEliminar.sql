@@ -9,7 +9,7 @@ SET NOCOUNT ON
 	BEGIN TRY
 	-- AQUI VA EL CODIGO
 		
-	DELETE FROM DBO.Vehiculo WHERE VehiculoId=@VehiculoId
+	DELETE FROM vehiculo WHERE VehiculoId=@VehiculoId
 
 
 		COMMIT TRANSACTION TRASA

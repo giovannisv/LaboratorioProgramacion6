@@ -2,12 +2,11 @@
     @MarcaVehiculoID INT,
 	@Matricula varchar(250)	,
 	@Color varchar(250)	,
-	@Modelo varchar(250),
-	@Estado BIT,
+	@Modelo varchar(250),	
 	@FechaModelo DATE,
 	@TieneDefectos BIT ,
-	@Defectos VARCHAR(1000)= NULL
-	
+	@Defectos VARCHAR(1000)= NULL,
+	@Estado BIT
 AS BEGIN
 SET NOCOUNT ON
 
@@ -16,27 +15,27 @@ SET NOCOUNT ON
 	BEGIN TRY
 	-- AQUI VA EL CODIGO
 		
-		INSERT INTO dbo.vehiculo 
+		INSERT INTO vehiculo 
 		(
-	     MarcaVehiculoId
+	     MarcaVehiculoID
 	    , Matricula 
 	    , Color
-	    , Modelo 
-	    , Estado 
+	    , Modelo 	     
 		, FechaModelo
 		, TieneDefectos
 		, Defectos
+		, Estado
 		)
 		VALUES
 		(
-		 @MarcaVehiculoId
+		 @MarcaVehiculoID
 	    , @Matricula 
 	    , @Color
-	    , @Modelo 
-	    , @Estado 
+	    , @Modelo	    
 		, @FechaModelo
 		, @TieneDefectos
 		, @Defectos
+		, @Estado 
 		)
 
 
