@@ -6,21 +6,20 @@ AS BEGIN
 
 	SELECT
 			VehiculoId
+		,   MarcaVehiculoID
 		,   Matricula
 		,   Color
 		,   Modelo		
 		,   FechaModelo
 		,	TieneDefectos
-		,   Defectos
-		,   Estado
-		,   MarcaVehiculoID
+		,   Defectos		
 		,	Descripcion
-	
+		,   Estado
 				
 
 	FROM vehiculo 
-	 INNER JOIN MarcaVehiculo 
-         ON MarcaVehiculoID = MarcaVehiculoId
+	 INNER JOIN marcavehiculo 
+         ON MarcaVehiculoID = @MarcaVehiculoID
 	WHERE
 	     (@VehiculoId IS NULL OR VehiculoId=@VehiculoId)
 

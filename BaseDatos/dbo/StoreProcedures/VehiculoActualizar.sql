@@ -1,13 +1,13 @@
-﻿CREATE PROCEDURE dbo.VehiculoActualizar
+﻿CREATE PROCEDURE [dbo].[VehiculoActualizar]
 	@VehiculoId INT,
 	@MarcaVehiculoID INT,
     @Matricula VARCHAR(250),
 	@Color VARCHAR(250),
-	@Modelo VARCHAR(250),
-	@Estado BIT,
+	@Modelo VARCHAR(250),	
 	@FechaModelo DATE,
 	@TieneDefectos BIT ,
-	@Defectos VARCHAR(1000)= NULL
+	@Defectos VARCHAR(1000)= NULL,
+	@Estado BIT
 AS BEGIN
 SET NOCOUNT ON
 
@@ -16,16 +16,15 @@ SET NOCOUNT ON
 	BEGIN TRY
 	-- AQUI VA EL CODIGO
 		
-	UPDATE dbo.vehiculo SET
-	 MarcaVehiculoID=@MarcaVehiculoId,
+	UPDATE vehiculo SET
+	 MarcaVehiculoID=@MarcaVehiculoID,
 	 Matricula=@Matricula,
 	 Color=@Color,
-	 Modelo=@Modelo,
-	 Estado=@Estado,
+	 Modelo=@Modelo,	 
 	 FechaModelo=@FechaModelo,
 	 TieneDefectos=@TieneDefectos,
 	 Defectos=@Defectos
-
+	 
 	WHERE VehiculoId=@VehiculoId
 
 		COMMIT TRANSACTION TRASA

@@ -1,6 +1,6 @@
 ﻿CREATE PROCEDURE [dbo].[MarcaVehiculoActualizar]
-	@Descripcion VARCHAR (250),
 	@MarcaVehiculoID INT,	
+	@Descripcion VARCHAR (250),	
 	@Estado BIT
 	AS
 	BEGIN 
@@ -9,8 +9,8 @@
 	BEGIN 	TRY --Metodos
 	UPDATE marcavehiculo
 	SET 
-	Descripcion=@Descripcion,
-	Estado=@Estado
+	Descripcion=@Descripcion
+	
 	WHERE
 	MarcaVehiculoID = @MarcaVehiculoID
 

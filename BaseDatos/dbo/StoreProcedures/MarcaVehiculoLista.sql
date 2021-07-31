@@ -7,7 +7,7 @@ AS
 
 
 		SELECT 
-		MarcaVehiculoId,
+		MarcaVehiculoID,
 		Descripcion
 
 		FROM	
@@ -15,10 +15,5 @@ AS
 
 			WHERE
 					Estado=1
-
-
-
-
-
 
 	END

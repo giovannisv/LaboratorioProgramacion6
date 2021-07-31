@@ -90,7 +90,7 @@ namespace WBL
             {
                 var result = sql.ExecuteAsync("VehiculoActualizar", new
                 {
-                    entity.VehiculoId,
+                    
                     entity.MarcaVehiculoID,
                     entity.Matricula,
                     entity.Color,

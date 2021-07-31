@@ -2,7 +2,7 @@
 (
 	VehiculoId INT NOT NULL IDENTITY (1,1) CONSTRAINT PK_Vehiculo  PRIMARY KEY CLUSTERED(VehiculoId)
 	, MarcaVehiculoID INT NOT NULL CONSTRAINT FK_Vehiculo_MarcaVehiculo FOREIGN key(MarcaVehiculoID)
-	REFERENCES dbo.MarcaVehiculo(MarcaVehiculoID)
+	REFERENCES dbo.marcavehiculo(MarcaVehiculoID)
 	, Matricula VARCHAR (250) NOT NULL
 	, Color VARCHAR (250) NOT NULL
 	,Modelo VARCHAR (250) NOT NULL
@@ -15,6 +15,6 @@
 	GO
 
 	CREATE UNIQUE NONCLUSTERED INDEX IDX_Vehiculo_Matricula
-	ON dbo.Vehiculo(Matricula)
+	ON dbo.vehiculo(Matricula)
 	WITH (DATA_COMPRESSION = PAGE)
 	GO
