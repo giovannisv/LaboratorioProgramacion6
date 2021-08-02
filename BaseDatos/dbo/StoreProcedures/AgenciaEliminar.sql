@@ -9,7 +9,7 @@ SET NOCOUNT ON
 	BEGIN TRY
 
 		
-	DELETE FROM Dbo.Agencias WHERE AgenciaId=@AgenciaId
+	DELETE FROM Agencias WHERE AgenciaId=@AgenciaId
 
 
 		COMMIT TRANSACTION TRASA

@@ -13,7 +13,7 @@ SET NOCOUNT ON
 	BEGIN TRY
 	-- AQUI VA EL CODIGO
 		
-	UPDATE dbo.Agencias SET
+	UPDATE Agencias SET
 	    Nombre=@Nombre,
 		IdCatalogoProvincia=@IdCatalogoProvincia,
 		IdCatalogoCanton=@IdCatalogoCanton,

@@ -20,7 +20,7 @@ AS BEGIN
 	
 				
 
-	FROM dbo.Agencias A
+	FROM Agencias A
 	 INNER JOIN dbo.CatalogoProvincia CP
          ON A.IdCatalogoProvincia = CP.IdCatalogoProvincia
      INNER JOIN dbo.CatalogoCanton CC

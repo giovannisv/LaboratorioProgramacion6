@@ -14,7 +14,7 @@ SET NOCOUNT ON
 	BEGIN TRY
 
 		
-		INSERT INTO dbo.Agencias 
+		INSERT INTO Agencias 
 		(	       
 	      Nombre,
 		  IdCatalogoProvincia,
