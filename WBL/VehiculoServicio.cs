@@ -98,9 +98,9 @@ namespace WBL
                     entity.FechaModelo,
                     entity.TieneDefectos,
                     entity.Defectos,
-                    entity.Estado,               
+                    entity.Estado              
                     
-                    Defectos = entity.TieneDefectos ? entity.Defectos : null
+                  
                 }
                     );
                 return await result;
