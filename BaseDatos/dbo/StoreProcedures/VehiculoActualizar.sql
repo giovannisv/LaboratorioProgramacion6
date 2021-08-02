@@ -17,6 +17,7 @@ SET NOCOUNT ON
 	-- AQUI VA EL CODIGO
 		
 	UPDATE vehiculo SET
+	VehiculoId=@VehiculoId,
 	 MarcaVehiculoID=@MarcaVehiculoID,
 	 Matricula=@Matricula,
 	 Color=@Color,

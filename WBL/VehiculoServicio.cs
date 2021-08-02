@@ -89,8 +89,8 @@ namespace WBL
             try
             {
                 var result = sql.ExecuteAsync("VehiculoActualizar", new
-                {
-                    
+                {                    
+                    entity.VehiculoId,
                     entity.MarcaVehiculoID,
                     entity.Matricula,
                     entity.Color,
@@ -98,18 +98,15 @@ namespace WBL
                     entity.FechaModelo,
                     entity.TieneDefectos,
                     entity.Defectos,
-                    entity.Estado,
-                 
+                    entity.Estado,               
                     
                     Defectos = entity.TieneDefectos ? entity.Defectos : null
-
                 }
                     );
                 return await result;
             }
             catch (Exception)
             {
-
                 throw;
             }
         }
