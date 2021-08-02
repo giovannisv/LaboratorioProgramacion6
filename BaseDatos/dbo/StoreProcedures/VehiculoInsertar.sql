@@ -1,4 +1,4 @@
-﻿CREATE PROCEDURE dbo.VehiculoInsertar
+﻿CREATE PROCEDURE [dbo].[VehiculoInsertar]
     @MarcaVehiculoID INT,
 	@Matricula varchar(250)	,
 	@Color varchar(250)	,

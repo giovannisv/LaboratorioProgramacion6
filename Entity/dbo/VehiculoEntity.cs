@@ -17,6 +17,7 @@ namespace Entity
 
         public int? MarcaVehiculoID { get; set; }
 
+
         public virtual MarcaVehiculoEntity MarcaVehiculo { get; set; }
 
         public string Matricula { get; set; }
