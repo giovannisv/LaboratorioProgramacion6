@@ -9,10 +9,10 @@ AS BEGIN
 		,  V.Matricula
 		,   V.Color
 		,   V.Modelo
-		,   FechaModelo
-		,	TieneDefectos
-		,   Defectos		
-		,   Estado
+		,   V.FechaModelo
+		,	V.TieneDefectos
+		,   V.Defectos		
+		,   V.Estado
 		,   MV.MarcaVehiculoID
 		,	MV.Descripcion
 
