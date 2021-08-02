@@ -10,7 +10,7 @@ AS
 		NombreCatalogoProvincia
 
 		FROM	
-			dbo.CatalogoProvincia
+			CatalogoProvincia
 
 	
 

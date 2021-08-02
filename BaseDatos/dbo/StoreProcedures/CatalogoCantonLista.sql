@@ -8,7 +8,7 @@ AS
 		NombreCatalogoCanton
 
 		FROM	
-			dbo.CatalogoCanton
+			CatalogoCanton
 
 	    WHERE
 		    IdCatalogoProvincia=@IdCatalogoProvincia

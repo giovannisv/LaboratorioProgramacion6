@@ -1,4 +1,4 @@
-﻿CREATE PROCEDURE dbo.MarcaVehiculoLista
+﻿CREATE PROCEDURE [dbo].[MarcaVehiculoLista]
 
 AS
 	BEGIN
@@ -11,7 +11,7 @@ AS
 		Descripcion
 
 		FROM	
-			dbo.marcavehiculo
+			marcavehiculo
 
 			WHERE
 					Estado=1

@@ -1,4 +1,4 @@
-﻿CREATE PROCEDURE [dbo].CatalogoDistritoLista
+﻿CREATE PROCEDURE [dbo].[CatalogoDistritoLista]
 @IdCatalogoCanton INT=null
 AS
 	BEGIN
@@ -8,7 +8,7 @@ AS
 		NombreCatalogoDistrito
 
 		FROM	
-			dbo.CatalogoDistrito
+			CatalogoDistrito
 
 	    WHERE
 		    IdCatalogoCanton=@IdCatalogoCanton
