@@ -89,7 +89,7 @@ namespace WBL
             try
             {
                 var result = sql.ExecuteAsync("VehiculoActualizar", new
-                {                    
+                {
                     entity.VehiculoId,
                     entity.MarcaVehiculoID,
                     entity.Matricula,
@@ -97,12 +97,12 @@ namespace WBL
                     entity.Modelo,
                     entity.FechaModelo,
                     entity.TieneDefectos,
-                    entity.Defectos,
-                    entity.Estado              
+                    entity.Defectos
                     
-                  
-                }
-                    );
+                    
+                    
+                });
+
                 return await result;
             }
             catch (Exception)
@@ -110,6 +110,8 @@ namespace WBL
                 throw;
             }
         }
+
+
         public async Task<DBEntity> Delete(VehiculoEntity entity)
         {
             try
