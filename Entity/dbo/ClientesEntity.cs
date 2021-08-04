@@ -8,6 +8,11 @@ namespace Entity
 {
     public class ClientesEntity :EN
     {
+        public ClientesEntity()
+        {
+            Agencias = Agencias ?? new AgenciasEntity();
+        }
+
         public int ? ClientesId { get; set; }
         public string Nombre { get; set; }
         public string Direccion { get; set; }
