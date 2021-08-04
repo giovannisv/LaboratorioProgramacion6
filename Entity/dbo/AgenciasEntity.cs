@@ -23,6 +23,6 @@ namespace Entity
         public CatalogoCantonEntity Canton { get; set; }
         public int? IdCatalogoDistrito { get; set; }
         public CatalogoDistritoEntity Distrito { get; set; }
-        public bool Estado { get; set; }
+       
     }
 }
