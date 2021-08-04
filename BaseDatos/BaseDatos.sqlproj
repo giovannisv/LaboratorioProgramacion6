@@ -81,6 +81,14 @@
     <Build Include="dbo\Tablas\CatalogoCanton.sql" />
     <Build Include="dbo\Tablas\CatalogoDistrito.sql" />
     <Build Include="dbo\Tablas\CatalogoProvincia.sql" />
+    <Build Include="dbo\StoreProcedures\ClientesActualizar.sql" />
+    <Build Include="dbo\StoreProcedures\ClientesEliminar.sql" />
+    <Build Include="dbo\StoreProcedures\ClientesInsertar.sql" />
+    <Build Include="dbo\StoreProcedures\ClientesObtener.sql" />
+    <Build Include="dbo\StoreProcedures\Login.sql" />
+    <Build Include="dbo\StoreProcedures\UsuarioRegistrar.sql" />
+    <Build Include="dbo\Tablas\Clientes.sql" />
+    <Build Include="dbo\Tablas\Usuarios.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="BaseDatos.publish.xml" />
