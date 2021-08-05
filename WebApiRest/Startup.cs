@@ -27,9 +27,11 @@ namespace WebApiRest
         public void ConfigureServices(IServiceCollection services)
         {
 
+            services.AddDIContainer();
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
+                
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "WebApiRest", Version = "v1" });
             });
         }

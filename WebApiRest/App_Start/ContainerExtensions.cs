@@ -7,7 +7,7 @@ using BD;
 using WBL;
 
 
-namespace WebApp
+namespace WebApiRest
 {
     public static class ContainerExtensions
     {
