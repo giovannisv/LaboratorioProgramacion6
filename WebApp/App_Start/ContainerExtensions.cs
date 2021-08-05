@@ -18,6 +18,14 @@ namespace WebApp
             services.AddSingleton<IDataAcces, DataAcces>();
             services.AddTransient<IMarcaVehiculoServicio, MarcaVehiculoServicio>();
             services.AddTransient<IVehiculoServicio, VehiculoServicio>();
+            services.AddTransient<IAgenciaServicio, AgenciaServicio>();
+            services.AddTransient<ICatalogoProvinciaServicio, CatalogoProvinciaServicio>();
+            services.AddTransient<ICatalogoCantonServicio, CatalogoCantonServicio>();
+            services.AddTransient<ICatalogoDistritoServicio, CatalogoDistritoServicio>();
+
+
+
+
 
             return services;
         }
