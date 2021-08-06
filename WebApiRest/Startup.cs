@@ -28,13 +28,20 @@ namespace WebApiRest
         {
 
             services.AddDIContainer();
-            services.AddControllers();
+            services.AddControllers().AddJsonOptions(option =>
+            
+            {
+                option.JsonSerializerOptions.DictionaryKeyPolicy = null;
+                option.JsonSerializerOptions.PropertyNamingPolicy = null;
+
+            });
             services.AddSwaggerGen(c =>
             {
-                
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "WebApiRest", Version = "v1" });
             });
+
         }
+
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)

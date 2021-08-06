@@ -30,17 +30,13 @@ namespace WebApp
                 option.JsonSerializerOptions.DictionaryKeyPolicy = null;
                 option.JsonSerializerOptions.PropertyNamingPolicy = null;
             })
-
-                .AddRazorPagesOptions(
-                  options =>
+            .AddRazorPagesOptions(
+                options =>
                 {
-                    options.Conventions.
-                    ConfigureFilter(new IgnoreAntiforgeryTokenAttribute());
+                    options.Conventions
+                    .ConfigureFilter(new IgnoreAntiforgeryTokenAttribute());
                 }
-                
-                );
-                
-                
+                );        
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -70,4 +66,15 @@ namespace WebApp
             });
         }
     }
+
+}
+
+
+
+
+
+
+
+
+
 }
