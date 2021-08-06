@@ -10,11 +10,12 @@ namespace WBL
 {
     public interface IUsuariosServicio
     {
-        Task<DBEntity> Registrar (UsuariosEntity entity);
-        Task<IEnumerable<UsuariosEntity>> Login(UsuariosEntity entity);
+        Task<UsuariosEntity> Login(UsuariosEntity entity);
+        Task<DBEntity> Registrar(UsuariosEntity entity);
     }
-
     public class UsuariosServicio : IUsuariosServicio
+
+    
     {
         private readonly IDataAcces sql;
 
@@ -44,7 +45,7 @@ namespace WBL
 
         }
 
-        public async Task<DBEntity> Registrar (UsuariosEntity entity)
+        public async Task<DBEntity> Registrar(UsuariosEntity entity)
         {
             try
             {
@@ -62,6 +63,11 @@ namespace WBL
 
                 throw;
             }
+        }
+
+        Task<UsuariosEntity> IUsuariosServicio.Login(UsuariosEntity entity)
+        {
+            throw new NotImplementedException();
         }
     }
 }

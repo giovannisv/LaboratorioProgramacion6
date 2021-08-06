@@ -35,6 +35,11 @@ namespace WebApiRest
                 option.JsonSerializerOptions.PropertyNamingPolicy = null;
 
             });
+            services.AddCors(options =>
+            {
+                options.AddDefaultPolicy(builder => builder.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
+            }
+                );
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "WebApiRest", Version = "v1" });
@@ -52,7 +57,7 @@ namespace WebApiRest
                 app.UseSwagger();
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "WebApiRest v1"));
             }
-
+            app.UseCors();
             app.UseHttpsRedirection();
 
             app.UseRouting();
