@@ -7,13 +7,13 @@ AS
 
 	 SELECT
 	 C.ClientesId,
-	 C.Nombre,
+	 C.NombreCompleto,
 	 C.Direccion,
 	 C.Telefono,
 	 C.Estado,
 	 A.AgenciaId,
 	 A.Nombre
-	 FROM dbo.Clientes C
+	 FROM dbo.clientes C
 	 INNER JOIN dbo.Agencias A
 			ON (C.AgenciaId=A.AgenciaId)
 	 WHERE
