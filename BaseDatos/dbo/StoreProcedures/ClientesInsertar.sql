@@ -1,7 +1,7 @@
 ﻿CREATE PROCEDURE [dbo].ClientesInsertar
 		@NombreCompleto VARCHAR(250),
 	@Direccion varchar(500),
-	@Telefono varchar(250),
+	@Telefono varchar(500),
 	@AgenciaId INT,
     @Estado BIT
 	
