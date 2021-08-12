@@ -18,7 +18,7 @@ namespace WebApiRest
             services.AddSingleton<IDataAcces, DataAcces>();
             services.AddTransient<IClientesServicio, ClientesServicio>();
             services.AddTransient<IUsuariosServicio, UsuariosServicio>();
-           
+            services.AddTransient<IAgenciaServicio, AgenciaServicio>();
 
             return services;
         }
