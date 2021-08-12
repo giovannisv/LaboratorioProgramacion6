@@ -89,6 +89,7 @@
     <Build Include="dbo\StoreProcedures\UsuarioRegistrar.sql" />
     <Build Include="dbo\Tablas\Usuarios.sql" />
     <Build Include="dbo\Tablas\clientes.sql" />
+    <Build Include="dbo\StoreProcedures\AgendaLista.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="BaseDatos.publish.xml" />
