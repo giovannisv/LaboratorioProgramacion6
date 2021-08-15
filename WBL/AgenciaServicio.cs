@@ -15,6 +15,7 @@ namespace WBL
         Task<IEnumerable<AgenciasEntity>> Get();
         Task<AgenciasEntity> GetByID(AgenciasEntity entity);
         Task<DBEntity> Update(AgenciasEntity entity);
+        Task<IEnumerable<AgenciasEntity>> GetLista();
     }
 
     public class AgenciaServicio : IAgenciaServicio
