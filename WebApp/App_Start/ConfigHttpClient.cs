@@ -11,7 +11,9 @@ namespace WebApp
     {
         public static IServiceCollection AddConfigHttpClient(this IServiceCollection services, IConfiguration Configuration)
         {
-
+            services.AddHttpClient<ServicioApi>(http =>
+            { http.BaseAddress = new Uri(Configuration.GetValue<string>("ApiServiceBase")); }
+            );
             return services;
         }
 
