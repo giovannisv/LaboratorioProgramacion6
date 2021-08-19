@@ -15,7 +15,7 @@ namespace WBL
         Task<IEnumerable<ClientesEntity>> Get();
         Task<ClientesEntity> GetByID(ClientesEntity entity);
         Task<DBEntity> Update(ClientesEntity entity);
-        Task<ClientesEntity> GetById(ClientesEntity clientesEntity);
+        
     }
 
     public class ClientesServicio : IClientesServicio
@@ -119,11 +119,7 @@ namespace WBL
                 throw;
             }
         }
-
-        public Task<ClientesEntity> GetById(ClientesEntity clientesEntity)
-        {
-            throw new NotImplementedException();
-        }
+        
     }
 }
 

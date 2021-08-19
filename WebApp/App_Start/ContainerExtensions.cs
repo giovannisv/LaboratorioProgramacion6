@@ -19,6 +19,7 @@ namespace WebApp
             services.AddTransient<IMarcaVehiculoServicio, MarcaVehiculoServicio>();
             services.AddTransient<IVehiculoServicio, VehiculoServicio>();
             services.AddTransient<IAgenciaServicio, AgenciaServicio>();
+            services.AddTransient<IClientesServicio, ClientesServicio>();
             services.AddTransient<ICatalogoProvinciaServicio, CatalogoProvinciaServicio>();
             services.AddTransient<ICatalogoCantonServicio, CatalogoCantonServicio>();
             services.AddTransient<ICatalogoDistritoServicio, CatalogoDistritoServicio>();
