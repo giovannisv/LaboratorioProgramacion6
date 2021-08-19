@@ -1,6 +1,6 @@
 "use strict";
-var AgenciaGrid;
-(function (AgenciaGrid) {
+var ClienteGrid;
+(function (ClienteGrid) {
     function OnClickEliminar(id) {
         ComfirmAlert("Desea eliminar este registro? ", "Eliminar", "warning", "#3085d6", "#d33")
             .then(function (result) {
@@ -18,7 +18,7 @@ var AgenciaGrid;
             }
         });
     }
-    AgenciaGrid.OnClickEliminar = OnClickEliminar;
+    ClienteGrid.OnClickEliminar = OnClickEliminar;
     $("#GridView").DataTable();
-})(AgenciaGrid || (AgenciaGrid = {}));
+})(ClienteGrid || (ClienteGrid = {}));
 //# sourceMappingURL=Grid.js.map

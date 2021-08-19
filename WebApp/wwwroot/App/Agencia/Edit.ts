@@ -1,7 +1,4 @@
-﻿import { data } from "jquery";
-
-
-namespace AgenciaEdit {
+﻿namespace AgenciaEdit {
     var Entity = $("#AppEdit").data("entity");
     var Formulario = new Vue(
         {

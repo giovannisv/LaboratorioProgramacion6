@@ -1,3 +1,4 @@
+"use strict";
 var AgenciaEdit;
 (function (AgenciaEdit) {
     var Entity = $("#AppEdit").data("entity");
@@ -53,5 +54,4 @@ var AgenciaEdit;
     });
     Formulario.$mount("#AppEdit");
 })(AgenciaEdit || (AgenciaEdit = {}));
-export {};
 //# sourceMappingURL=Edit.js.map

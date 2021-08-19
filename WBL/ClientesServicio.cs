@@ -120,7 +120,10 @@ namespace WBL
             }
         }
 
-
+        public Task<ClientesEntity> GetById(ClientesEntity clientesEntity)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
 

@@ -20,6 +20,18 @@ var App;
             var data = _a.data;
             return data;
         }); };
+        AxiosProvider.ClientesEliminar = function (id) { return ServiceApi.delete("api/Clientes/" + id).then(function (_a) {
+            var data = _a.data;
+            return data;
+        }); };
+        AxiosProvider.ClientesGuardar = function (entity) { return ServiceApi.post("api/Clientes/", entity).then(function (_a) {
+            var data = _a.data;
+            return data;
+        }); };
+        AxiosProvider.ClientesActualizar = function (entity) { return ServiceApi.put("api/Clientes/", entity).then(function (_a) {
+            var data = _a.data;
+            return data;
+        }); };
     })(AxiosProvider = App.AxiosProvider || (App.AxiosProvider = {}));
 })(App || (App = {}));
 //# sourceMappingURL=AxiosProvider.js.map
