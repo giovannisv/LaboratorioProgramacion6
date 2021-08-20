@@ -32,6 +32,14 @@ var App;
             var data = _a.data;
             return data;
         }); };
+        AxiosProvider.UsuariosRegirtrar = function (entity) { return ServiceApi.post("api/Usuarios/Registrar", entity).then(function (_a) {
+            var data = _a.data;
+            return data;
+        }); };
+        AxiosProvider.UsuarioLogin = function (entity) { return axios.post("Login", entity).then(function (_a) {
+            var data = _a.data;
+            return data;
+        }); };
     })(AxiosProvider = App.AxiosProvider || (App.AxiosProvider = {}));
 })(App || (App = {}));
 //# sourceMappingURL=AxiosProvider.js.map

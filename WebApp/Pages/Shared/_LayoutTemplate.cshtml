@@ -1,10 +1,18 @@
-﻿<!DOCTYPE html>
+﻿@inject Microsoft.AspNetCore.Http.IHttpContextAccessor Context;
+@{ 
+    var UsuariosSession = Context.HttpContext.Session.Get<Entity.UsuariosEntity>(IApp.UsuarioSession);
+}
+
+
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <base href="/" />
     <title>@ViewData["Title"] - WebApp</title>
+    @await Html.PartialAsync("_HeaderTemplate")
    
 </head>
 <body>
@@ -331,7 +339,7 @@
                     <div class="profile-img"> <img src="~/Assets/template/img/profile.png" alt="user" class="w-100" /> </div>
                     <!-- User profile text-->
                     <div class="profile-text pt-1 dropdown">
-                        <a href="#" class="dropdown-toggle u-dropdown w-100 text-white d-block position-relative" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">Andrey</a>
+                        <a href="#" class="dropdown-toggle u-dropdown w-100 text-white d-block position-relative" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">@UsuariosSession.Nombre</a>
                         <div class="dropdown-menu animated flipInY" aria-labelledby="dropdownMenuLink">
                             <a class="dropdown-item" href="#">
                                 <i data-feather="user" class="feather-sm text-info me-1 ms-1"></i> My
@@ -373,15 +381,27 @@
                             </a>
                             <ul aria-expanded="false" class="collapse  first-level">
                                 <li class="sidebar-item">
-                                    <a href="index.html" class="sidebar-link">
+                                    <a asp-page="/MarcaVehiculo/Grid" class="sidebar-link">
                                         <i class="mdi mdi-adjust"></i>
                                         <span class="hide-menu"> Marcar Vehiculo </span>
                                     </a>
                                 </li>
                                 <li class="sidebar-item">
-                                    <a href="index2.html" class="sidebar-link">
+                                    <a asp-page="/Vehiculo/Grid" class="sidebar-link">
                                         <i class="mdi mdi-adjust"></i>
-                                        <span class="hide-menu"> Vehiculos </span>
+                                        <span class="hide-menu"> Vehiculo </span>
+                                    </a>
+                                </li>
+                                <li class="sidebar-item">
+                                    <a asp-page="/Agencia/Grid" class="sidebar-link">
+                                        <i class="mdi mdi-adjust"></i>
+                                        <span class="hide-menu"> Agencia </span>
+                                    </a>
+                                </li>
+                                <li class="sidebar-item">
+                                    <a asp-page="/Cliente/Grid" class="sidebar-link">
+                                        <i class="mdi mdi-adjust"></i>
+                                        <span class="hide-menu"> Cliente </span>
                                     </a>
                                 </li>
 
@@ -592,7 +612,7 @@
         </div>
     </aside>
 
-
+    @await Html.PartialAsync("_scriptsTemplate")
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>

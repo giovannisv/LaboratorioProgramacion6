@@ -42,7 +42,16 @@ namespace WebApp
 
 
         #endregion
+        #region Usuario
+        public async Task<UsuariosEntity>UsuarioLogin(UsuariosEntity entity)
+        {
+            var result = await client.ServicioPostAsync<UsuariosEntity>("api/Usuarios/Login", entity);
+            return result;
 
+        }
+
+
+        #endregion
 
     }
 }

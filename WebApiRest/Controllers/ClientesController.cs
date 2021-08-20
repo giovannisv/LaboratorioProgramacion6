@@ -38,7 +38,7 @@ namespace WebApiRest.Controllers
         {
             try
             {
-                return await clientesServicio.GetById(new ClientesEntity { ClientesId = id});
+                return await clientesServicio.GetByID(new ClientesEntity { ClientesId = id});
 
             }
             catch (Exception ex)

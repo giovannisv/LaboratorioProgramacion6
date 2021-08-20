@@ -10,8 +10,10 @@
     <Content Remove="wwwroot\App\Agencia\Grid.ts" />
     <Content Remove="wwwroot\App\Cliente\Edit.ts" />
     <Content Remove="wwwroot\App\Cliente\Grid.ts" />
+    <Content Remove="wwwroot\App\Login.ts" />
     <Content Remove="wwwroot\App\MarcaVehiculo\Edit.ts" />
     <Content Remove="wwwroot\App\MarcaVehiculo\Grid.ts" />
+    <Content Remove="wwwroot\App\Registrar.ts" />
     <Content Remove="wwwroot\App\Vehiculo\Edit.ts" />
     <Content Remove="wwwroot\App\Vehiculo\Grid.ts" />
     <Content Remove="wwwroot\Assets\Plugin\axios\AxiosConfig.ts" />
@@ -19,6 +21,7 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="5.0.6" />
+    <PackageReference Include="Microsoft.AspNetCore.Session" Version="2.2.0" />
     <PackageReference Include="System.Net.Http.Json" Version="5.0.0" />
   </ItemGroup>
 
@@ -32,8 +35,10 @@
     <TypeScriptCompile Include="wwwroot\App\Agencia\Grid.ts" />
     <TypeScriptCompile Include="wwwroot\App\Cliente\Edit.ts" />
     <TypeScriptCompile Include="wwwroot\App\Cliente\Grid.ts" />
+    <TypeScriptCompile Include="wwwroot\App\Login.ts" />
     <TypeScriptCompile Include="wwwroot\App\MarcaVehiculo\Edit.ts" />
     <TypeScriptCompile Include="wwwroot\App\MarcaVehiculo\Grid.ts" />
+    <TypeScriptCompile Include="wwwroot\App\Registrar.ts" />
     <TypeScriptCompile Include="wwwroot\App\Vehiculo\Edit.ts" />
     <TypeScriptCompile Include="wwwroot\App\Vehiculo\Grid.ts" />
     <TypeScriptCompile Include="wwwroot\Assets\Plugin\axios\AxiosConfig.ts" />

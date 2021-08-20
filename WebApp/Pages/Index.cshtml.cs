@@ -13,9 +13,10 @@ namespace WebApp.Pages
 
 
 
-        public void OnGet()
+        public IActionResult OnGet()
         {
-
+            if (!this.SessionOnline()) return RedirectToPage("Login");
+            return Page();
         }
     }
 }

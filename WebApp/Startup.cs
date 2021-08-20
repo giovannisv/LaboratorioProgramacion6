@@ -26,6 +26,16 @@ namespace WebApp
         {
             services.AddDIContainer();
             services.AddConfigHttpClient(Configuration);
+            services.AddHttpContextAccessor();
+            services.AddDistributedMemoryCache();
+
+            services.AddSession(options =>
+            {
+                options.IdleTimeout = TimeSpan.FromMinutes(30);
+                options.Cookie.HttpOnly = true;
+                options.Cookie.IsEssential = true;
+            });
+
             services.AddRazorPages().AddJsonOptions(option =>
             {
                 option.JsonSerializerOptions.DictionaryKeyPolicy = null;
@@ -53,7 +63,7 @@ namespace WebApp
                 // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
-
+            app.UseSession();
             app.UseHttpsRedirection();
             app.UseStaticFiles();
 
